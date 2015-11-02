@@ -670,11 +670,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="380" height="196"/>
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="242"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wBe-2c-Bhr">
-                                <rect key="frame" x="75" y="105" width="231" height="62"/>
+                                <rect key="frame" x="75" y="151" width="231" height="62"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="YaluShore" id="yyr-Wa-UCW">
                                     <font key="font" metaFont="system" size="52"/>
@@ -683,7 +683,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UXa-5I-A3L">
-                                <rect key="frame" x="130" y="41" width="121" height="32"/>
+                                <rect key="frame" x="130" y="99" width="121" height="32"/>
                                 <animations/>
                                 <buttonCell key="cell" type="push" title="Jailbreak Me!" bezelStyle="rounded" alignment="center" borderStyle="border" identifier="jbme" imageScaling="proportionallyDown" inset="2" id="UQf-yW-iuf">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -693,13 +693,25 @@
                                     <action selector="jailbreakIt:" target="XfG-lQ-9wD" id="bzc-Y9-20l"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vO8-pa-owc">
+                                <rect key="frame" x="38" y="36" width="280" height="41"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="D2A-Zz-CyI">
+                                    <font key="font" metaFont="system" size="12"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <animations/>
                     </view>
+                    <connections>
+                        <outlet property="labelText" destination="vO8-pa-owc" id="yaZ-Y6-HCm"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="25" y="618"/>
+            <point key="canvasLocation" x="25" y="641"/>
         </scene>
     </scenes>
 </document>

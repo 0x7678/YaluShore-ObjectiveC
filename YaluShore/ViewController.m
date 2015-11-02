@@ -9,21 +9,22 @@
 #import "ViewController.h"
 
 @implementation ViewController
+@synthesize outputArea, outputArea2;
+@synthesize labelText;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    // Do any additional setup after loading the view.
+    [labelText setStringValue: @"Starting"];
+    
+    
 }
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
-
-    // Update the view, if already loaded.
 }
 
-- (IBAction)jailbreakIt:(NSButton *)sender
-{
+- (IBAction)jailbreakIt:(NSButton *)sender {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
     NSTask *task;
     task = [[NSTask alloc] init];
     [task setLaunchPath: @"/bin/sh"];
@@ -49,9 +50,19 @@
     
     NSString *string;
     string = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
-    
-    NSLog (@"script returned:\n%@", string);
-}
+        
+        NSString *string2 = string;
+        
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+            
+            [labelText setStringValue: string2];
+        }
+
+    );
+        
+        //NSLog (@"script returned:\n%@", string);
+    }
+);}
 
 
 @end
