@@ -29,7 +29,7 @@
     [task setLaunchPath: @"/bin/sh"];
     
     NSArray *arguments;
-    NSString* newpath = [[NSBundle mainBundle] pathForResource:@"run" ofType:@"sh"];
+    NSString* newpath = [[NSBundle mainBundle] pathForResource:@"yalu-master/run" ofType:@"sh"];
     NSLog(@"shell script path: %@",newpath);
     arguments = [NSArray arrayWithObjects:newpath, nil];
     [task setArguments: arguments];
