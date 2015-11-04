@@ -15,6 +15,7 @@
 		F50E88991BDFBCED0059692A /* YaluShoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F50E88981BDFBCED0059692A /* YaluShoreTests.m */; };
 		F50E88A41BDFBCED0059692A /* YaluShoreUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F50E88A31BDFBCED0059692A /* YaluShoreUITests.m */; };
 		F5C373591BE7EA4500E0DC4B /* yalu-master in Resources */ = {isa = PBXBuildFile; fileRef = F5C373581BE7EA4500E0DC4B /* yalu-master */; };
+		F5EF6A0E1BEA562F00BF6F3A /* test in Resources */ = {isa = PBXBuildFile; fileRef = F5EF6A0D1BEA562F00BF6F3A /* test */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		F50E88A31BDFBCED0059692A /* YaluShoreUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YaluShoreUITests.m; sourceTree = "<group>"; };
 		F50E88A51BDFBCED0059692A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5C373581BE7EA4500E0DC4B /* yalu-master */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "yalu-master"; path = "YaluShore/yalu-master"; sourceTree = "<group>"; };
+		F5EF6A0D1BEA562F00BF6F3A /* test */ = {isa = PBXFileReference; lastKnownFileType = folder; path = test; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		F50E88751BDFBCEC0059692A = {
 			isa = PBXGroup;
 			children = (
+				F5EF6A0D1BEA562F00BF6F3A /* test */,
 				F5C373581BE7EA4500E0DC4B /* yalu-master */,
 				F50E88801BDFBCED0059692A /* YaluShore */,
 				F50E88971BDFBCED0059692A /* YaluShoreTests */,
@@ -243,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5EF6A0E1BEA562F00BF6F3A /* test in Resources */,
 				F5C373591BE7EA4500E0DC4B /* yalu-master in Resources */,
 				F50E888B1BDFBCED0059692A /* Assets.xcassets in Resources */,
 				F50E888E1BDFBCED0059692A /* Main.storyboard in Resources */,

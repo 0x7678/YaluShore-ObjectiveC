@@ -17,7 +17,9 @@ int step = 1;
 - (void)viewDidLoad {
     step = 1;
     [super viewDidLoad];
-    [labelText setStringValue: @"Starting"];
+    NSString *stats = self.getConnectedIdeviceStats;
+    NSLog(@"%@", stats);
+    [labelText setStringValue: @"Starting!"];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -35,7 +37,7 @@ int step = 1;
             [task setLaunchPath: @"/bin/sh"];
     
             NSArray *arguments;
-            NSString* newpath = [[NSBundle mainBundle] pathForResource:@"yalu-master/run" ofType:@"sh"];
+            NSString* newpath = [[NSBundle mainBundle] pathForResource:@"test/run" ofType:@"sh"];
             NSLog(@"shell script path: %@",newpath);
             arguments = [NSArray arrayWithObjects:newpath, nil];
             [task setArguments: arguments];
@@ -64,10 +66,38 @@ int step = 1;
         
         } );
         
-        [labelText setStringValue: @"When device has restarted, press button!"];
+        //[labelText setStringValue: @"When device has restarted, press button!"];
         step = 2;
     }
 }
 
+
+- (NSString*)getConnectedIdeviceStats
+{
+    NSTask *ioRegTask = [[NSTask alloc] init];
+    [ioRegTask setLaunchPath:@"/usr/sbin/ioreg"];
+    [ioRegTask setArguments:[NSArray arrayWithObjects:@"-Src",@"IOUSBDevice",nil]];
+    
+    NSTask *grepTask = [[NSTask alloc] init];
+    [grepTask setLaunchPath:@"/usr/bin/grep"];
+    [grepTask setArguments:[NSArray arrayWithObjects:@"-i", @"product-name", nil]];
+    
+    NSPipe *ioregToGrepPipe = [[NSPipe alloc] init];
+    [ioRegTask setStandardOutput:ioregToGrepPipe];
+    [grepTask setStandardInput:ioregToGrepPipe];
+    
+    NSPipe *outputPipe = [[NSPipe alloc] init];
+    [grepTask setStandardOutput:outputPipe];
+    NSFileHandle *outputFileHandle = [outputPipe fileHandleForReading];
+    
+    [ioRegTask launch];
+    [grepTask launch];
+    
+    NSData *outputData = [outputFileHandle readDataToEndOfFile];
+    
+    NSString *nvcap = [[NSString alloc] initWithData:outputData encoding:NSUTF8StringEncoding];
+    
+    return nvcap;
+}
 
 @end
