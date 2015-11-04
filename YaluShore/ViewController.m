@@ -72,7 +72,7 @@ int step = 1;
 }
 
 
-- (NSString*)getConnectedIdeviceStats
+- (NSString*)getConnectedIdeviceStats 
 {
     NSTask *ioRegTask = [[NSTask alloc] init];
     [ioRegTask setLaunchPath:@"/usr/sbin/ioreg"];
